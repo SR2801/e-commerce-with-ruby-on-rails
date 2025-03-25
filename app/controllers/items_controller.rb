@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :get_item, only: %i[ show edit update destroy ]
 
   def index
-    @items = Item.all
+    @items = Item.all.order(rating: :desc)
   end
 
   def show
@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.expect(item: %i[ name price inventory_count featured_image description])
+    params.expect(item: %i[ name price inventory_count featured_image description rating])
   end
 
   def get_item

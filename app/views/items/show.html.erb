@@ -8,7 +8,8 @@
     <%= image_tag @item.featured_image if @item.featured_image.attached?%>
     <section class = "item-info">
         <h1 style = "width: 1200px" ><%= @item.name%></h1>
-        <h2><%= @item.price%></h2>
+        <h2>$<%= @item.price%></h2>
+        <h3> Rating: <%= @item.rating || 0 %> </h3>
         <h4>Item Description:</h4>
         <h3><%= @item.description %></h3>
         <h4>Stock Available:</h4>

@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1
 # check=error=true
 
+
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
 # docker build -t shopping .
 # docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name shopping shopping
@@ -23,7 +24,9 @@ RUN apt-get update -qq && \
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development"
+    BUNDLE_WITHOUT="development" \
+    SECRET_KEY_BASE="3ed508e91e7fd6b46ec0264c4f22221e6fa6a8a4a6432e0b2f8848c17cb95a96ca987290894b76813b9ef1d10825355d13300293b74679066883581493590f8b"
+    #Modified
 
 # Throw-away build stage to reduce size of final image
 FROM base AS build

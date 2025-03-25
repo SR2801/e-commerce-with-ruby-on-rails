@@ -20,14 +20,19 @@ nav{
     /* justify-content: flex-end; */
     display: flex; 
     font-size: 0.9em;
-    gap: 0.5em;
     /* max-width: 1024px; */
     margin: 0 auto;
     padding: 1rem;
+    position: sticky;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 150px;
 }
 
-nav a {
-    display: inline-block;
+a {
+    text-decoration: none;
+    color: black;
 }
 
 

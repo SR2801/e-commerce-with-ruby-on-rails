@@ -1,5 +1,5 @@
 <%= form_with model: item do |form| %>
-<div>
+<div style="margin: 40px; display: flex; flex-direction: column; gap: 10px;">
     <%= form.label :name%>
     <%= form.text_field :name%>
     <%= form.label :price%>
@@ -10,11 +10,13 @@
     <%= form.rich_text_area :description, style: "display: block"%>
     <%= form.label :featured_image %>
     <%= form.file_field :featured_image, style: "display: block; width: 400 px", accept: "image/*"%>
+    <%= form.label :rating%>
+    <%= form.text_field :rating%>
 </div>
-<div>
-    <%= form.submit%>
+<div class="buttons" style="margin: 40px">
+    <%= form.submit %>
 </div>
-<div>
+<div class="buttons" style="margin: 40px">
     <%= link_to "Cancel", item %>
 </div>
 <% end %>
